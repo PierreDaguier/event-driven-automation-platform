@@ -1,0 +1,29 @@
+name: Bug report
+about: Report a defect
+labels: ["type:bug", "priority:P0"]
+title: "fix: "
+body:
+  - type: textarea
+    attributes:
+      label: Current behavior
+      description: What happened?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Expected behavior
+      description: What should happen?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Steps to reproduce
+      description: Include payloads, logs, and screenshots when possible.
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Impact
+      description: P0/P1/P2 and affected area
+    validations:
+      required: true
