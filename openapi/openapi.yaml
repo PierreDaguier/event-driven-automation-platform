@@ -1,0 +1,196 @@
+openapi: 3.1.0
+info:
+  title: Event-Driven Automation Platform API
+  version: 0.1.0
+  description: Production-grade demo / technical case study API for webhook-driven workflow automation.
+servers:
+  - url: http://localhost:8080
+paths:
+  /healthz:
+    get:
+      summary: Health check
+      responses:
+        "200":
+          description: API is healthy
+  /api/v1/webhooks/{publicKey}:
+    post:
+      summary: Ingest signed webhook event
+      parameters:
+        - in: path
+          name: publicKey
+          required: true
+          schema:
+            type: string
+        - in: header
+          name: X-Signature
+          required: true
+          schema:
+            type: string
+          description: HMAC signature in format `sha256=<hex>`.
+        - in: header
+          name: Idempotency-Key
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "202":
+          description: Event accepted
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/IngestionResult"
+        "400":
+          description: Invalid payload
+        "401":
+          description: Invalid signature or webhook key
+  /api/v1/overview:
+    get:
+      summary: Dashboard overview KPIs
+      responses:
+        "200":
+          description: Overview metrics
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Overview"
+  /api/v1/workflows:
+    get:
+      summary: List workflows
+      responses:
+        "200":
+          description: Workflow list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Workflow"
+  /api/v1/workflows/{workflowID}:
+    get:
+      summary: Workflow detail
+      parameters:
+        - in: path
+          name: workflowID
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        "200":
+          description: Workflow detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Workflow"
+        "404":
+          description: Workflow not found
+  /api/v1/logs:
+    get:
+      summary: List execution logs
+      parameters:
+        - in: query
+          name: workflow_id
+          schema:
+            type: string
+            format: uuid
+        - in: query
+          name: limit
+          schema:
+            type: integer
+            default: 50
+      responses:
+        "200":
+          description: Execution logs
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ExecutionLog"
+  /api/v1/settings:
+    get:
+      summary: Environment and webhook settings
+      responses:
+        "200":
+          description: Settings
+components:
+  schemas:
+    IngestionResult:
+      type: object
+      properties:
+        event_id:
+          type: string
+          format: uuid
+        matched_rules:
+          type: integer
+        enqueued_jobs:
+          type: integer
+        duplicate:
+          type: boolean
+    Overview:
+      type: object
+      properties:
+        total_runs:
+          type: integer
+        success_rate:
+          type: number
+        avg_latency_ms:
+          type: number
+        failed_runs:
+          type: integer
+        pending_runs:
+          type: integer
+    Workflow:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        description:
+          type: string
+        enabled:
+          type: boolean
+        trigger:
+          type: string
+        webhook_key:
+          type: string
+        conditions:
+          type: array
+          items:
+            type: object
+        actions:
+          type: array
+          items:
+            type: object
+    ExecutionLog:
+      type: object
+      properties:
+        id:
+          type: integer
+        run_id:
+          type: string
+          format: uuid
+        workflow_id:
+          type: string
+          format: uuid
+        status:
+          type: string
+        latency_ms:
+          type: integer
+        request_preview:
+          type: object
+        response_preview:
+          type: string
+        error:
+          type: string
+        created_at:
+          type: string
+          format: date-time
