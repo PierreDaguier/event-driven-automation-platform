@@ -1,0 +1,29 @@
+{
+  "name": "event-driven-automation-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint . --max-warnings=0"
+  },
+  "dependencies": {
+    "clsx": "2.1.1",
+    "motion": "12.35.2",
+    "next": "16.1.6",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.2.1",
+    "@types/node": "24.8.1",
+    "@types/react": "19.2.1",
+    "@types/react-dom": "19.2.1",
+    "eslint": "9.39.1",
+    "eslint-config-next": "16.1.6",
+    "playwright-core": "^1.58.2",
+    "tailwindcss": "4.2.1",
+    "typescript": "5.9.3"
+  }
+}
