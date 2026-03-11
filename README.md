@@ -135,6 +135,8 @@ npm run build
 - Release notes workflow: [`.github/workflows/release.yml`](.github/workflows/release.yml)
 - GitHub setup script (labels + branch protection): [`scripts/setup-github.sh`](scripts/setup-github.sh)
 - Protocol details: [`docs/GITHUB_PROTOCOL.md`](docs/GITHUB_PROTOCOL.md)
+- PR breakdown: [`docs/PR_PLAN.md`](docs/PR_PLAN.md)
+- Release roadmap: [`docs/RELEASES.md`](docs/RELEASES.md)
 
 ## Example webhook trigger
 
