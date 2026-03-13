@@ -38,7 +38,7 @@ Why this stack fits the 2026 freelance market:
 - Journal d’exécution (succès/échec, latence, payload preview redacted).
 - Dashboard métier: overview, workflows, logs timeline, settings.
 
-## Screens (Desktop + Mobile)
+## Screens
 
 ![Landing](docs/screenshots/01-landing.png)
 ![Dashboard Overview](docs/screenshots/02-dashboard-overview.png)
@@ -46,7 +46,7 @@ Why this stack fits the 2026 freelance market:
 ![Workflow Detail](docs/screenshots/04-workflow-detail.png)
 ![Logs Timeline](docs/screenshots/05-logs.png)
 ![Settings](docs/screenshots/06-settings.png)
-![Mobile Landing](docs/screenshots/07-mobile-landing.png)
+![Demo Walkthrough](docs/gifs/demo-walkthrough.gif)
 
 GIF demo: [`docs/gifs/demo-walkthrough.gif`](docs/gifs/demo-walkthrough.gif)
 
