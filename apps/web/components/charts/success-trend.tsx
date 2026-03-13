@@ -12,7 +12,7 @@ export function SuccessTrend({ successRate }: { successRate: number }) {
           <div key={i} className="flex items-center gap-2">
             <div className="h-2 flex-1 rounded-full bg-slate-800">
               <div
-                className="h-2 rounded-full bg-gradient-to-r from-cyan-400 to-lime-300"
+                className="h-2 rounded-full bg-gradient-to-r from-amber-400 to-emerald-300"
                 style={{ width: `${v}%` }}
               />
             </div>

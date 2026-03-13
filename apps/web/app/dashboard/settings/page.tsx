@@ -12,12 +12,12 @@ export default async function SettingsPage() {
       </header>
 
       <Panel>
-        <p className="text-xs uppercase tracking-wide text-cyan-300">Environment</p>
+        <p className="text-xs uppercase tracking-wide text-amber-300">Environment</p>
         <p className="mt-2 text-lg text-white">{settings.environment}</p>
       </Panel>
 
       <Panel>
-        <h3 className="text-sm uppercase tracking-wide text-cyan-300">Webhook Keys</h3>
+        <h3 className="text-sm uppercase tracking-wide text-amber-300">Webhook Keys</h3>
         <div className="mt-4 overflow-x-auto">
           <table className="min-w-full text-left text-sm">
             <thead className="text-xs uppercase tracking-wide text-slate-500">
