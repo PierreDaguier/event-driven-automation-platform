@@ -11,12 +11,12 @@ const valueProps = [
 
 export default function LandingPage() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[radial-gradient(circle_at_10%_20%,#22d3ee33,transparent_40%),radial-gradient(circle_at_90%_80%,#a3e63533,transparent_35%),#030712]">
+    <main className="relative min-h-screen overflow-hidden bg-[radial-gradient(circle_at_10%_20%,#f59e0b33,transparent_40%),radial-gradient(circle_at_90%_80%,#10b9812e,transparent_35%),#090b10]">
       <div className="mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 py-16">
         <motion.p
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-4 text-xs uppercase tracking-[0.35em] text-cyan-300"
+          className="mb-4 text-xs uppercase tracking-[0.35em] text-amber-300"
         >
           Event-Driven Automation Platform
         </motion.p>
@@ -58,13 +58,13 @@ export default function LandingPage() {
         >
           <Link
             href="/dashboard"
-            className="rounded-xl bg-cyan-400 px-5 py-3 font-medium text-slate-950 transition hover:bg-cyan-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200"
+            className="rounded-xl bg-amber-300 px-5 py-3 font-medium text-slate-950 transition hover:bg-amber-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-200"
           >
             Open Live Dashboard
           </Link>
           <Link
             href="https://github.com"
-            className="rounded-xl border border-white/20 px-5 py-3 font-medium text-slate-100 transition hover:border-cyan-300 hover:text-cyan-200"
+            className="rounded-xl border border-white/20 px-5 py-3 font-medium text-slate-100 transition hover:border-amber-300 hover:text-amber-200"
           >
             View Engineering Artifacts
           </Link>

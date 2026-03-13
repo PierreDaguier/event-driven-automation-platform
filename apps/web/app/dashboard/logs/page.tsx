@@ -32,7 +32,7 @@ export default async function LogsPage() {
                   </div>
                 </div>
                 <details className="mt-3 rounded-lg border border-white/10 bg-slate-950/80 p-3">
-                  <summary className="cursor-pointer text-xs text-cyan-300">Payload preview (redacted)</summary>
+                  <summary className="cursor-pointer text-xs text-amber-300">Payload preview (redacted)</summary>
                   <pre className="mt-2 overflow-x-auto text-xs text-slate-300">{JSON.stringify(log.request_preview, null, 2)}</pre>
                 </details>
                 {log.error && <p className="mt-3 text-xs text-rose-300">Error: {log.error}</p>}

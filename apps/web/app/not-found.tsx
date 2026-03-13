@@ -6,7 +6,7 @@ export default function NotFoundPage() {
       <div>
         <h1 className="text-3xl font-semibold text-white">Page not found</h1>
         <p className="mt-2 text-sm text-slate-400">The requested resource does not exist.</p>
-        <Link href="/dashboard" className="mt-6 inline-block rounded-lg border border-cyan-300/40 px-4 py-2 text-cyan-200">
+        <Link href="/dashboard" className="mt-6 inline-block rounded-lg border border-amber-300/40 px-4 py-2 text-amber-200">
           Back to dashboard
         </Link>
       </div>
